@@ -26,6 +26,7 @@
 
           %ul.navbar-nav.ml-auto
             - if user_signed_in?
+              %li= link_to 'Sidekiq', '/sidekiq', target: '_blank', class: 'nav-link'
               %li= link_to 'Sign out', destroy_user_session_path, class: 'nav-link', method: :delete
             - else
               = link_to 'Sign in', new_user_session_path, class: 'nav-link'

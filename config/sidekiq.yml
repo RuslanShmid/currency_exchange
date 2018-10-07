@@ -1,0 +1,5 @@
+:schedule:
+  sync_rate_worker:
+    cron: '* * * * *'
+    class: SyncRateWorker
+
