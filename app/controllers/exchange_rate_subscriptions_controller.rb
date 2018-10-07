@@ -1,15 +1,27 @@
 class ExchangeRateSubscriptionsController < ApplicationController
+  def index
+    @exchange_rates = current_user.exchange_rates
+  end
+
   def new; end
 
   def create
     response = CurrencyExchangeClient.convert(exchange_rate_params)
     if response['error'].zero?
       ex_rate = ExchangeRate.find_or_create_by(exchange_rate_params)
-      if current_user.exchange_rate.exists?(ex_rate.id)
-        flash[:success] = "You already subscribed to: 'from: #{exchange_rate_params['from']}, to: #{exchange_rates_params['to']}'"
+      if current_user.exchange_rates.exists?(ex_rate.id)
+        flash[:notice] = t(
+          'you_already_subscribed',
+          from: exchange_rate_params['from'],
+          to: exchange_rate_params['to']
+        )
       else
-        current_user.exchange_rate.append(ex_rate)
-        flash[:error] = "You subscribed to: 'from: #{exchange_rate_params['from']}, to: #{exchange_rates_params['to']}'"
+        current_user.exchange_rates.append(ex_rate)
+        flash[:success] = t(
+          'you_successfully_subscribed',
+          from: exchange_rate_params['from'],
+          to: exchange_rate_params['to']
+        )
       end
       redirect_to exchange_rate_subscriptions_path
     else

@@ -1,0 +1,17 @@
+= link_to 'Create new subscription', new_exchange_rate_subscription_path
+
+%table{class: 'table table-striped'}
+  %thead
+    %tr
+      %th From
+      %th To
+      %th Subscribed At
+      %th Actions
+
+  %tbody
+    - @exchange_rates.each do |rate|
+      %tr
+        %td= rate.from
+        %td= rate.to
+        %td= rate.created_at
+        %td= link_to 'delete', exchange_rate_subscription_path(rate), method: :delete, data: { confirm: 'Are you certain you want to delete this?' }

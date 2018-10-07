@@ -1,0 +1,2 @@
+class ExchangeRatesUser < ApplicationRecord
+end
