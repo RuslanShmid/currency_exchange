@@ -1,0 +1,21 @@
+default: &default
+  DATABASE_HOST: 'localhost'
+  DATABASE_USERNAME: 'postgres'
+  DATABASE_PASSWORD: '12345678'
+  REDIS_HOST: 'localhost'
+  CURRENCY_API_KEY: 'iyGgUkdGwvXuHeBS8VYG8pAtGfaSfd'
+
+development:
+  <<: *default
+  DATABASE_NAME: 'currency_exchange_development'
+
+test:
+  <<: *default
+  DATABASE_NAME: 'currency_exchange_test'
+
+production:
+  <<: *default
+  DATABASE_NAME: 'currency_exchange_production'
+  SECRET_KEY_BASE: 'c7fdce92d441f1a1a83d836bc8d633f765713b97ec0cc3335d91afada8babab9b5e752da77d5270cdaedfbb1605e7a3323a73a501c3c706451f207d792e9ecc9'
+  DEVISE_SECRET_KEY: '474de58cca14a6a40741227ffe578e96c00b0e29c1e5b482dba92ffd293d5d84862773b4c70775ad04a67c08cf7e5330768e0edd416679b18525ab31abba3064'
+
