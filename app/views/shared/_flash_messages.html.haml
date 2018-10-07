@@ -1,0 +1,4 @@
+- flash.each do |key, value|
+  .alert-dismissable{ class: flash_class(key) }
+    = link_to '×', '#', class: 'close', data: { dismiss: 'alert', label: 'close' }
+    = value

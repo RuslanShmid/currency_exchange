@@ -3,7 +3,7 @@ default: &default
   DATABASE_USERNAME: 'postgres'
   DATABASE_PASSWORD: '12345678'
   REDIS_HOST: 'localhost'
-  CURRENCY_API_KEY: 'iyGgUkdGwvXuHeBS8VYG8pAtGfaSfd'
+  CURRENCY_API_KEY: 'BUhaVSsMaB9MWHU2Yj8EMzwydP8hiN'
 
 development:
   <<: *default
