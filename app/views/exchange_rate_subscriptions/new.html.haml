@@ -1,0 +1,8 @@
+= form_tag exchange_rate_subscriptions_path, class: 'form-group', method: :post do
+  %div{ class: 'form-group' }
+    %label Form:
+    %input{ name: 'exchange_rate_subscription[from]', type: :text, class: 'form-control', required: true}
+  %div{ class: 'form-group' }
+    %label To:
+    %input{ name: 'exchange_rate_subscription[to]', type: :text, class: 'form-control', required: true}
+  %input{ class: 'btn btn-success', style: 'width: 100%', type: :submit}
