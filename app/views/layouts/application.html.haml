@@ -9,7 +9,7 @@
   %body
     %nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
       .container
-        = link_to 'CurrencyExchange', 'root_path', class: 'navbar-brand'
+        = link_to 'CurrencyExchange', root_path, class: 'navbar-brand'
 
         %button.navbar-toggler{ type: 'button', data: { toggle: 'collapse' }, aria: { expanded: false, label: 'Toggle navigation' } }
           %span.navbar-toggler-icon
@@ -19,6 +19,10 @@
             - if user_signed_in?
               %li.nav-item
                 = link_to 'Exchange Rate Subscriptions', exchange_rate_subscriptions_path, class: 'nav-link', style: 'color: green'
+              %li.nav-item
+                = link_to 'Exchange Rate Histories', history_exchange_rates_path, class: 'nav-link', style: 'color: yellow'
+              %li.nav-item
+                = link_to 'Exchange Current Rate', history_exchange_rates_current_rate_path, class: 'nav-link', style: 'color: orange'
 
           %ul.navbar-nav.ml-auto
             - if user_signed_in?

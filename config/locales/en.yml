@@ -1,5 +1,7 @@
 en:
   you_already_subscribed: "You already subscribed to: 'from: %{from}, to: %{to}'"
   you_successfully_subscribed: "You successfully subscribed to 'from: %{from}, to: %{to}'"
+  subscription_destroyed: "Rate 'from: %{from} to: %{to}' destroyed"
+  subscription_does_not_destroyed: "Subscription 'from: %{rate.from} to: %{rate.to}' does not destroyed"
   error: 'Error %{error}'
 

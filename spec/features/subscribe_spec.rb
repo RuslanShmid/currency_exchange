@@ -6,7 +6,9 @@ describe 'Subscribe to Currency Exchange by User' do
   before { sign_in }
 
   scenario 'Manage Currency Subscription' do
-    visit new_exchange_rate_subscription_path
+    visit root_path
+
+    click_on 'Create new subscription'
 
     within 'form' do
       fill_in 'exchange_rate_subscription[from]', with: 'USD'
@@ -15,5 +17,9 @@ describe 'Subscribe to Currency Exchange by User' do
     end
 
     expect(page).to have_content("You successfully subscribed to 'from: USD, to: EUR'")
+
+    click_on 'delete'
+
+    expect(page).to have_content("Rate 'from: USD to: EUR' destroyed")
   end
 end

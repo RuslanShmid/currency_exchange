@@ -30,6 +30,16 @@ class ExchangeRateSubscriptionsController < ApplicationController
     end
   end
 
+  def destroy
+    rate = current_user.exchange_rates.find(params[:id])
+    if current_user.exchange_rates.destroy(rate)
+      flash[:success] = t('subscription_destroyed', from: rate['from'], to: rate['to'])
+    else
+      flash[:error] = t('subscription_does_not_destroyed', from: rate['from'], to: rate['to'])
+    end
+    redirect_to exchange_rate_subscriptions_path
+  end
+
   private
 
   def exchange_rate_params

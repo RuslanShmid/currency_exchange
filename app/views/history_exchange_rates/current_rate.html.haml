@@ -1,0 +1,15 @@
+%table{class: 'table table-striped'}
+  %thead
+    %tr
+      %th From
+      %th To
+      %th Current Value
+      %th Date Time
+  %tbody
+    - @exchange_rates.each do |exchange_rate|
+      %tr
+        %td= exchange_rate.from
+        %td= exchange_rate.to
+        %td= exchange_rate.history_exchange_rates.order(:created_at).last&.amount
+        %td= exchange_rate.history_exchange_rates.order(:created_at).last&.created_at
+
