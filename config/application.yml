@@ -1,9 +1,9 @@
 default: &default
+  REDIS_HOST: 'localhost'
   DATABASE_HOST: 'localhost'
   DATABASE_USERNAME: 'postgres'
   DATABASE_PASSWORD: '12345678'
-  REDIS_HOST: 'localhost'
-  CURRENCY_API_KEY: 'BUhaVSsMaB9MWHU2Yj8EMzwydP8hiN'
+  CURRENCY_API_KEY: 'Gi9NQE8EXHGEg2guNJKBNUXLfD3CEa'
 
 development:
   <<: *default

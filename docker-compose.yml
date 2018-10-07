@@ -1,0 +1,39 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:10
+    volumes:
+      - /docker_volumes/currency_exchange/postgresql:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: 12345678
+      POSTGRES_USER: postgres
+
+  redis:
+    image: redis:3.2
+    command: redis-server
+    volumes:
+      - /docker_volumes/omaha/redis:/data
+
+  web:
+    build: .
+    command: bash -c "rm tmp/pids/server.pid; rails s -b '0.0.0.0'"
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+      - redis
+    stdin_open: true
+    tty: true
+
+  sidekiq:
+    build: .
+    command: sidekiq -C config/sidekiq.yml
+    volumes:
+      - .:/usr/src/app
+    depends_on:
+      - postgres
+      - redis
+    stdin_open: true
+    tty: true
