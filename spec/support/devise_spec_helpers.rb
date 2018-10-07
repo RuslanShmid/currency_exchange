@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 module DeviseSpecHelpers
-
   include Warden::Test::Helpers
 
   def sign_in(options = {})

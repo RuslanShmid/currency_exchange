@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class CurrencyExchangeClient
-
   CURRENCY_EXCHANGE_URL = 'https://www.amdoren.com/api/currency.php'
 
   def self.convert(params)
@@ -23,4 +22,3 @@ class CurrencyExchangeClient
     )
   end
 end
-

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ExchangeRateSubscriptionsController < ApplicationController
   def index
     @exchange_rates = current_user.exchange_rates

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class HistoryExchangeRatesController < ApplicationController
   before_action :exchange_rates, only: %i[index current_rate]
 
