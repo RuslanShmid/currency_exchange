@@ -1,24 +1,29 @@
-# README
+## Start in docker
+Build images:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+```
+docker build -f Dockerfile-base -t project/currency_exchange .
+docker-compose build
+```
 
-Things you may want to cover:
+Run containers:
 
-* Ruby version
+```
+docker-compose up
+```
 
-* System dependencies
+Create, migrate and seed the database:
 
-* Configuration
+```
+docker exec -it currency_exchange_web_1 rake db:create db:migrate db:seed
+```
 
-* Database creation
+## Start on localhost
 
-* Database initialization
+Change environments to:
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+application.yml
+REDIS_HOST: 'localhost'
+DATABASE_HOST: 'localhost'
+```
