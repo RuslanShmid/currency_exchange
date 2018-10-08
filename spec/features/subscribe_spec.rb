@@ -2,10 +2,10 @@
 
 require 'rails_helper'
 
-describe 'Subscribe to Currency Exchange by User' do
+describe 'Manage Currency Subscription' do
   before { sign_in }
 
-  scenario 'Manage Currency Subscription' do
+  scenario 'Subscribe and Unsubscribe to Currency Exchange by User' do
     visit root_path
 
     click_on 'Create new subscription'

@@ -3,12 +3,12 @@
 module DeviseSpecHelpers
   include Warden::Test::Helpers
 
-  def sign_in(options = {})
+  def sign_in(user = nil)
     user =
-      if options[:user].present?
-        options[:user]
+      if user.present?
+        user
       else
-        User.create(email: 'shmid@shmid.com', password: '12345678')
+        User.create(email: 'ivan@gmail.com', password: '12345678')
       end
 
     login_as(user, scope: :user)
