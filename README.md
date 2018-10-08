@@ -18,6 +18,11 @@ Create, migrate and seed the database:
 docker exec -it currency_exchange_web_1 rake db:create db:migrate
 ```
 
+Run rspecs
+```
+docker exec -it currency_exchange_web_1 rspec
+```
+
 ## Run on localhost
 
 Change environments to:
