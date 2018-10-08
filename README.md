@@ -1,4 +1,4 @@
-## Start in docker
+## Run in docker
 Build images:
 
 ```
@@ -15,10 +15,10 @@ docker-compose up
 Create, migrate and seed the database:
 
 ```
-docker exec -it currency_exchange_web_1 rake db:create db:migrate db:seed
+docker exec -it currency_exchange_web_1 rake db:create db:migrate
 ```
 
-## Start on localhost
+## Run on localhost
 
 Change environments to:
 

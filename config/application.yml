@@ -3,7 +3,7 @@ default: &default
   DATABASE_HOST: 'postgres'
   DATABASE_USERNAME: 'postgres'
   DATABASE_PASSWORD: '12345678'
-  CURRENCY_API_KEY: 'Qxw26Tt9ceJrCEbV7BxbueFBenVYsw'
+  CURRENCY_API_KEY: 'AfDKMQbsLJfsvTSg9fenJ57aeqVebR'
 
 development:
   <<: *default
